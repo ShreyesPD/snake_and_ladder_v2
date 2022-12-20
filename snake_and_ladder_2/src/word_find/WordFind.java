@@ -9,7 +9,7 @@ public class  WordFind {
 		this.wordList = DataLoadUtility.dataload("./words");
 	}
 	
-    public int find(String key) {
+    public int patternSearch(String key) {
     	
     	for (String word:wordList) {
     		if (word.toLowerCase().equals(key.toLowerCase()))
