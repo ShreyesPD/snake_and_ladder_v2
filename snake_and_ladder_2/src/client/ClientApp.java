@@ -8,7 +8,8 @@ public class ClientApp {
 
 		WordFind wordFinder = new WordFind();
 		
-		System.out.println(wordFinder.find("CANCER"));
+		
+		System.out.println(wordFinder.patternSearch("CANCER"));
 	}
 
 }
