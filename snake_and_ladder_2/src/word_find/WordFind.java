@@ -9,7 +9,12 @@ public class  WordFind {
 		this.wordList = DataLoadUtility.dataload("./words");
 	}
 	
-    public int find() {
+    public int find(String key) {
+    	
+    	for (String word:wordList) {
+    		if (word.toLowerCase().equals(key.toLowerCase()))
+    			return key.length();
+    	}
     	
         return 0;
     }

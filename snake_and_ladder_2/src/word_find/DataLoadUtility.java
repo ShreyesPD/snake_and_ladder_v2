@@ -15,8 +15,7 @@ public class DataLoadUtility {
 			File file2=new File(filepath);
 			s=new Scanner(file2);
 			while (s.hasNextLine()) {
-				  wordList.add(s.next()); 
-				  System.out.println(s.next());
+				  wordList.add(s.next());
 			}
 		} catch (Exception e) {
 			System.out.println("Caught an exception "+ e);
