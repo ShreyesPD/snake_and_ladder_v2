@@ -1,7 +1,16 @@
 package word_find;
 
+import java.util.List;
+
 public class  WordFind {
-    public int returnWordCount() {
+	List<String> wordList;
+	
+	public WordFind() {
+		this.wordList = DataLoadUtility.dataload("./words");
+	}
+	
+    public int find() {
+    	
         return 0;
     }
 }
