@@ -13,8 +13,10 @@ public class WordFind {
 
 	public int patternSearch(String key) {
 		for (String word : wordList) {
-			if (word.toLowerCase().equals(key.toLowerCase()))
+			if (word.toLowerCase().equals(key.toLowerCase())) {
+				wordList.remove(key.toLowerCase());
 				return key.length();
+			}
 		}
 
 		return 0;
