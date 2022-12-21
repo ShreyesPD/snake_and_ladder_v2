@@ -31,13 +31,12 @@ public class WordFind {
 			for (int j = 0; j < 10; j++) {
 				grid[i][j] = '?';
 			}
-			System.out.println();
 		}
 
 		for (int k = 0; k < 10; k++) {
 			Random randIndex = new Random();
 
-			String s = wordList.get(randIndex.nextInt(wordList.size()));
+			String s = wordList.get(randIndex.nextInt(wordList.size() - 1));
 
 			Integer srow = ((int) Math.floor(Math.random() * (max - min + 1)));
 			Integer scol = (int) Math.floor(Math.random() * (max - min + 1));
@@ -66,9 +65,7 @@ public class WordFind {
 				if (grid[i][j] == '?') {
 					grid[i][j] = Character.toUpperCase((char) ('A' + rnd.nextInt(26)));
 				}
-
 			}
-			System.out.println();
 		}
 
 		for (int i = 0; i < 10; i++) {
