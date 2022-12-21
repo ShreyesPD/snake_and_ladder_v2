@@ -12,7 +12,7 @@ public class ClientApp {
 //		
 //		System.out.println(wordFinder.patternSearch("CANCER"));
 		
-		Board b=new Board();
+		// Board b=new Board();
 		
 		wordFinder.printWordGrid();
 	}
