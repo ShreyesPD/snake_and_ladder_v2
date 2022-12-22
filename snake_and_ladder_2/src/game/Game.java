@@ -1,11 +1,12 @@
+package game;
+
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
 
-import snakeAndLadder.entities.Board;
-import snakeAndLadder.entities.BoardEntity;
-import snakeAndLadder.entities.Player;
-import snakeAndLadder.word_find.WordFind;
+import board.Board;
+import entities.Player;
+import word_find.WordFind;
+
 
 public class Game{
     Board board;
