@@ -1,6 +1,7 @@
 package board;
 
 import java.util.HashMap;
+import java.util.Queue;
 import java.util.Random;
 
 import entities.BoardEntity;
@@ -8,6 +9,7 @@ import entities.Hint;
 import entities.Ladder;
 import entities.Rocket;
 import entities.Snake;
+import entities.Player;
 
 public class Board {
 
