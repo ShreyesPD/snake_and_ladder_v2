@@ -50,9 +50,35 @@ public class Board {
 		
 	}
     
-	public void print() {
-	
+	public void print(Queue<Player> p) {
+		for (int i = cellCount; i > 0; i--) {
+			for (Player player : p) {
+				// System.out.println(player.getUserName()+":"+player.getPosition());
+				if (i == player.getPosition()) {
+					System.out.print(player.getString());
+					break;
+				}
+			}
+			if (hasBoardEntity(i)) {
+				System.out.print(cells.get(i).getString());
+			} else {
+				if (i == 1)
+					System.out.print("🏠️");
+				else if (i == 100)
+					System.out.print("🏁️");
+				else
+					System.out.print(i + " ");
+			}
+			System.out.print("\t");
+
+			if (i % 10 == 1) {
+				System.out.println("\n");
+			}
+		}
+		System.out.println();
+
 	}
+
 
 	private void setEntity(int index, BoardEntity e) {
 		cells.put(index, e);
