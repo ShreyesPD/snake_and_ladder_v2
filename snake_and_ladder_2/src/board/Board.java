@@ -16,44 +16,46 @@ import entities.Reverse;
 public class Board {
 
 	HashMap<Integer, BoardEntity> cells;
-	Integer cellCount;
-	
-	public Board(int dimention) {
-		this.cellCount = dimention*dimention;
+	private Integer cellCount;
+
+	public Board(Integer dimention) {
+		this.cellCount = dimention * dimention;
 		cells = new HashMap<Integer, BoardEntity>();
-		for(int i=0; i<dimention; i++) {
-			Integer min = 2;
-			Integer max = cellCount - 1;
-			Integer start = (int) Math.floor(Math.random()*(max-min+1)+min);
+		for (int i = 0; i < dimention; i++) {
+
+			 Integer min = 2;
+			 Integer max = cellCount - 1;
+			 Integer start = (int) Math.floor(Math.random() * (max - min + 1) + min);
 			max = start - 1;
-			Integer end = (int) Math.floor(Math.random()*(max-min+1)+min);
-			if(!hasBoardEntity(start)) {
+			Integer end = (int) Math.floor(Math.random() * (max - min + 1) + min);
+			if (!hasBoardEntity(start)) {
 				setEntity(start, new Snake(start, end));
 			}
+
 			max = cellCount - 1;
-			end = (int) Math.floor(Math.random()*(max-min+1)+min);
+			end = (int) Math.floor(Math.random() * (max - min + 1) + min);
 			max = end - 1;
-			start = (int) Math.floor(Math.random()*(max-min+1)+min);
-			if(!hasBoardEntity(start)) {
+			start = (int) Math.floor(Math.random() * (max - min + 1) + min);
+			if (!hasBoardEntity(start)) {
 				setEntity(start, new Ladder(start, end));
-			}	
-			
-			start = (int) Math.floor(Math.random()*(max-min+1)+min);
-			if(!hasBoardEntity(start)) {
-				setEntity(start, new Freeze(start,0));
+			}
+
+			start = (int) Math.floor(Math.random() * (max - min + 1) + min);
+			if (!hasBoardEntity(start)) {
+				setEntity(start, new Freeze(start, 0));
 			}
 
 		}
-		
+
 		Random random = new Random();
-		
+
 		for (int i = 0; i < 3; i++) {
-			Integer position = random.nextInt(99);
-			if(!hasBoardEntity(position)) {
-				setEntity(position, new Reverse(position,-1));
+		    Integer position = random.nextInt(99);
+			if (!hasBoardEntity(position)) {
+				setEntity(position, new Reverse(position, -1));
 			}
 		}
-		
+
 		Integer position = random.nextInt(50);
 		if (!hasBoardEntity(position)) {
 			Rocket rocket = new Rocket(position);
@@ -62,12 +64,12 @@ public class Board {
 
 		Integer positionHint = random.nextInt(99);
 		if (!hasBoardEntity(positionHint)) {
-			Hint hint = new Hint(positionHint,-2);
+			Hint hint = new Hint(positionHint, -2);
 			setEntity(hint.getStart(), hint);
 		}
-		
+
 	}
-    
+
 	public void print(Queue<Player> p) {
 		for (int i = cellCount; i > 0; i--) {
 			for (Player player : p) {
@@ -96,7 +98,6 @@ public class Board {
 		System.out.println();
 
 	}
-
 
 	private void setEntity(int index, BoardEntity e) {
 		cells.put(index, e);

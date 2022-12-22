@@ -14,7 +14,7 @@ public class Game {
 	Board board;
 	Queue<Player> players;
 	Queue<Player> winners;
-	Integer size = 100;
+	private Integer size = 100;
 	WordFind wordFinder;
 
 	public Game() {
@@ -50,7 +50,7 @@ public class Game {
 			System.out.println("Find a word");
 			String word = in.nextLine();
 
-			int move = wordFinder.patternSearch(word);
+			Integer move = wordFinder.patternSearch(word);
 			
 			makeMove(currPlayer, move);
 			if (currPlayer.getPosition() == size) {
@@ -74,7 +74,7 @@ public class Game {
 	}
 
 	private void makeMove(Player player, int move) {
-		int currPosition = player.getPosition();
+		Integer currPosition = player.getPosition();
 
 		if (move == 0) {
 			System.out.println("Word Not Found!");
@@ -82,7 +82,7 @@ public class Game {
 		}
 
 		System.out.println("You got: " + move);
-		int finalPos = currPosition + move;
+		Integer finalPos = currPosition + move;
 
 		if(player.getDirection()==false){
 			finalPos = finalPos -move - move;

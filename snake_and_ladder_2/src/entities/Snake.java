@@ -1,7 +1,7 @@
 package entities;
 
 public class Snake extends BoardEntity{
-    public Snake(int start, int end) {
+    public Snake(Integer start, Integer end) {
 		super(start, end);
 		
 	}

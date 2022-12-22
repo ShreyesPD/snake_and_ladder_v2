@@ -1,7 +1,7 @@
 package entities;
 
 public class Rocket extends BoardEntity {
-    public Rocket(int position) {
+    public Rocket(Integer position) {
         super(position, position);
     }
 

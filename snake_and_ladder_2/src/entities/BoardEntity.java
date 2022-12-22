@@ -1,12 +1,12 @@
 package entities;
 
 public abstract class BoardEntity {
-    private int start;
-	private int end;
+    private Integer start;
+	private Integer end;
 	
 	public BoardEntity() {}
 
-	public BoardEntity(int start, int end) {
+	public BoardEntity(Integer start, Integer end) {
 		this.start = start;
 		this.end = end;
 	}
@@ -14,16 +14,16 @@ public abstract class BoardEntity {
 	public abstract String getEncounterMessage();
 	public abstract String getString();
 	
-	public int getStart() {
+	public Integer getStart() {
 		return start;
 	}
-	public void setStart(int start) {
+	public void setStart(Integer start) {
 		this.start = start;
 	}
-	public int getEnd() {
+	public Integer getEnd() {
 		return end;
 	}
-	public void setEnd(int end) {
+	public void setEnd(Integer end) {
 		this.end = end;
 	}
 }

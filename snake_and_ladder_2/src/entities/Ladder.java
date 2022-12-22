@@ -1,7 +1,7 @@
 package entities;
 
 public class Ladder extends BoardEntity{
-    public Ladder(int start, int end) {
+    public Ladder(Integer start, Integer end) {
 		super(start, end);
 	}
 
