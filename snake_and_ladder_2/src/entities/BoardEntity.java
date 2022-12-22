@@ -4,6 +4,8 @@ public abstract class BoardEntity {
     private int start;
 	private int end;
 	
+	public BoardEntity() {}
+
 	public BoardEntity(int start, int end) {
 		this.start = start;
 		this.end = end;

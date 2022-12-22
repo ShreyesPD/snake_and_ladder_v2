@@ -1,20 +1,16 @@
 package client;
 
-import board.Board;
-import word_find.WordFind;
+import entities.Player;
+import game.Game;
 
 public class ClientApp {
 
 	public static void main(String[] args) {
 
-		WordFind wordFinder = new WordFind();
-//		
-//		
-//		System.out.println(wordFinder.patternSearch("CANCER"));
-		
-		// Board b=new Board();
-		
-		wordFinder.printWordGrid();
+		Game game= new Game();
+		game.addPlayer(new Player("🧔"));
+		game.addPlayer(new Player("👩🏻"));
+		game.launch();
 	}
 
 }
