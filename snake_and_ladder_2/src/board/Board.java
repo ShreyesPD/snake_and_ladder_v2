@@ -36,11 +36,8 @@ public class Board {
 			start = (int) Math.floor(Math.random()*(max-min+1)+min);
 			if(!hasBoardEntity(start)) {
 				setEntity(start, new Ladder(start, end));
-			}
-			start = (int) Math.floor(Math.random()*(max-min+1)+min);
-			if(!hasBoardEntity(start)) {
-				setEntity(start, new Reverse(start,-1));
-			}
+			}	
+			
 			start = (int) Math.floor(Math.random()*(max-min+1)+min);
 			if(!hasBoardEntity(start)) {
 				setEntity(start, new Freeze(start,0));
@@ -49,6 +46,14 @@ public class Board {
 		}
 		
 		Random random = new Random();
+		
+		for (int i = 0; i < 3; i++) {
+			Integer position = random.nextInt(99);
+			if(!hasBoardEntity(position)) {
+				setEntity(position, new Reverse(position,-1));
+			}
+		}
+		
 		Integer position = random.nextInt(50);
 		if (!hasBoardEntity(position)) {
 			Rocket rocket = new Rocket(position);
