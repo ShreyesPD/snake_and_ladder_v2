@@ -3,9 +3,9 @@ package entities;
 
 public class Player extends BoardEntity
 {
-    Private Integer position;
-	Private String userName;
-	Private Integer direction;
+    private Integer position;
+	private String userName;
+	private Integer direction;
 
 	
 	
