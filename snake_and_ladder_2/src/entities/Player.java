@@ -3,8 +3,10 @@ import entities.BoardEntity;
 
 public class Player extends BoardEntity
 {
-    Integer position;
-	String userName;
+    Private Integer position;
+	Private String userName;
+	Private Integer direction;
+
 	
 	
 	public String getUserName() {
@@ -18,14 +20,24 @@ public class Player extends BoardEntity
 	public Player(String userName) {
 		
 		position = 0;
-		this.userName = userName; 
+		this.userName = userName;
+		this.direction=1;
+
 	}
 
-	public int getPosition() {
+	public Integer getPosition() {
 		return position;
 	}
 
 	public void setPosition(int position) {
+		this.position = position;
+	}
+
+	public Integer getDirection() {
+		return position;
+	}
+
+	public void setDirection(int position) {
 		this.position = position;
 	}
 
