@@ -26,6 +26,36 @@ public class Game {
 
 	}
 
+	public void launch() {
+		this.board.print(players);
+		Scanner in = new Scanner(System.in);
+		
+		while (players.size() > 1) {
+			Player currPlayer = players.poll();
+			System.out.println();
+			System.out.println(currPlayer.getUserName()+"'s turn.");
+			
+			wordFinder.printWordGrid();
+			
+			System.out.println("Find a word");
+			String word = in.nextLine();
+
+			int move = wordFinder.patternSearch(word);
+			
+			makeMove(currPlayer, move);
+			if (currPlayer.getPosition() == size) {
+				System.out.println(currPlayer.getUserName() + " won!!!");
+				winners.add(currPlayer);
+			} else {
+				players.add(currPlayer);
+			}
+			printPositions();
+			board.print(players);
+		}
+		
+		in.close();
+	}
+
 	private void printPositions() {
 		for(Player player : players) {
 			System.out.println(player.getUserName()+":"+player.getPosition());
