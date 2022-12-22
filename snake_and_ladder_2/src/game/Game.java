@@ -26,6 +26,13 @@ public class Game {
 
 	}
 
+	private void printPositions() {
+		for(Player player : players) {
+			System.out.println(player.getUserName()+":"+player.getPosition());
+		}
+		
+	}
+
 	private void makeMove(Player player, int move) {
 		int currPosition = player.getPosition();
 
