@@ -5,6 +5,7 @@ import java.util.Queue;
 import java.util.Random;
 
 import entities.BoardEntity;
+import entities.Freeze;
 import entities.Hint;
 import entities.Ladder;
 import entities.Rocket;
@@ -39,6 +40,10 @@ public class Board {
 			start = (int) Math.floor(Math.random()*(max-min+1)+min);
 			if(!hasBoardEntity(start)) {
 				setEntity(start, new Reverse(start,-1));
+			}
+			start = (int) Math.floor(Math.random()*(max-min+1)+min);
+			if(!hasBoardEntity(start)) {
+				setEntity(start, new Freeze(start,0));
 			}
 
 		}

@@ -6,6 +6,15 @@ public class Player extends BoardEntity
     private Integer position;
 	private String userName;
 	private Boolean direction;
+	private Boolean movement;
+
+	public Boolean getMovement() {
+		return movement;
+	}
+
+	public void setMovement(Boolean movement) {
+		this.movement = movement;
+	}
 
 	public String getUserName() {
 		return userName;
@@ -20,6 +29,7 @@ public class Player extends BoardEntity
 		position = 0;
 		this.userName = userName;
 		this.direction=true;
+		this.movement=true;
 	}
 
 	public Integer getPosition() {

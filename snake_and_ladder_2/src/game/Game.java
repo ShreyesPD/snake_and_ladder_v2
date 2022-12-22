@@ -29,9 +29,19 @@ public class Game {
 	public void launch() {
 		this.board.print(players);
 		Scanner in = new Scanner(System.in);
-		
+		Player currPlayer;
+
 		while (players.size() > 1) {
-			Player currPlayer = players.poll();
+			if(players.element().getMovement()==true){
+				currPlayer = players.poll();
+			}
+			else{
+				currPlayer = players.poll();
+				players.add(currPlayer);
+				currPlayer.setMovement(true);
+				currPlayer = players.poll();
+			}
+
 			System.out.println();
 			System.out.println(currPlayer.getUserName()+"'s turn.");
 			
@@ -100,6 +110,11 @@ public class Game {
 				}
 				else if(board.getEntity(finalPos).getEnd()==-1){
 					player.setDirection(false);
+					System.out.println(board.getEntity(finalPos).getEncounterMessage());
+					break;
+				}
+				else if( board.getEntity(finalPos).getEnd()==0){
+					player.setMovement(false);
 					System.out.println(board.getEntity(finalPos).getEncounterMessage());
 					break;
 				}
