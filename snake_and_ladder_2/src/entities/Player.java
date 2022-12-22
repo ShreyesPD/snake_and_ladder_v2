@@ -5,10 +5,8 @@ public class Player extends BoardEntity
 {
     private Integer position;
 	private String userName;
-	private Integer direction;
+	private Boolean direction;
 
-	
-	
 	public String getUserName() {
 		return userName;
 	}
@@ -21,8 +19,7 @@ public class Player extends BoardEntity
 		
 		position = 0;
 		this.userName = userName;
-		this.direction=1;
-
+		this.direction=true;
 	}
 
 	public Integer getPosition() {
@@ -33,12 +30,12 @@ public class Player extends BoardEntity
 		this.position = position;
 	}
 
-	public Integer getDirection() {
-		return position;
+	public Boolean getDirection() {
+		return direction;
 	}
 
-	public void setDirection(int position) {
-		this.position = position;
+	public void setDirection(Boolean direction) {
+		this.direction = direction;
 	}
 
 	@Override

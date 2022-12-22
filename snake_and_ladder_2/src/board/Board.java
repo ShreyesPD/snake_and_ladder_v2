@@ -10,6 +10,7 @@ import entities.Ladder;
 import entities.Rocket;
 import entities.Snake;
 import entities.Player;
+import entities.Reverse;
 
 public class Board {
 
@@ -34,7 +35,12 @@ public class Board {
 			start = (int) Math.floor(Math.random()*(max-min+1)+min);
 			if(!hasBoardEntity(start)) {
 				setEntity(start, new Ladder(start, end));
-			}	
+			}
+			start = (int) Math.floor(Math.random()*(max-min+1)+min);
+			if(!hasBoardEntity(start)) {
+				setEntity(start, new Reverse(start,-1));
+			}
+
 		}
 		
 		Random random = new Random();

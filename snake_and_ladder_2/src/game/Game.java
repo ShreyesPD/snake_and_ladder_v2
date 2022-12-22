@@ -14,7 +14,7 @@ public class Game {
 	Board board;
 	Queue<Player> players;
 	Queue<Player> winners;
-	int size = 100;
+	Integer size = 100;
 	WordFind wordFinder;
 
 	public Game() {
@@ -73,8 +73,14 @@ public class Game {
 
 		System.out.println("You got: " + move);
 		int finalPos = currPosition + move;
+
+		if(player.getDirection()==false){
+			finalPos = finalPos -move - move;
+			player.setDirection(true);
+		}
+
 		if (finalPos <= size) {
-			if (board.hasBoardEntity(finalPos)) {
+			 while (board.hasBoardEntity(finalPos)) {
 				BoardEntity boardEntity = board.getEntity(finalPos);
 
 				if (boardEntity.getStart() == boardEntity.getEnd()) {
@@ -92,6 +98,12 @@ public class Game {
 					}
 					sc.close();
 				}
+				else if(board.getEntity(finalPos).getEnd()==-1){
+					player.setDirection(false);
+					System.out.println(board.getEntity(finalPos).getEncounterMessage());
+					break;
+				}
+
 				System.out.println(boardEntity.getEncounterMessage());
 				finalPos = boardEntity.getEnd();
 			}
