@@ -23,17 +23,24 @@ public class Board {
 			max = start - 1;
 			Integer end = (int) Math.floor(Math.random()*(max-min+1)+min);
 			if(!hasBoardEntity(start)) {
-				setEntity(start, new Snake());
+				setEntity(start, new Snake(start, end));
 			}
 			max = cellCount - 1;
 			end = (int) Math.floor(Math.random()*(max-min+1)+min);
 			max = end - 1;
 			start = (int) Math.floor(Math.random()*(max-min+1)+min);
 			if(!hasBoardEntity(start)) {
-				setEntity(start, new Ladder());
-			}
-			
+				setEntity(start, new Ladder(start, end));
+			}	
 		}
+		
+		Random random = new Random();
+		Integer positionHint = random.nextInt(99);
+		if (!hasBoardEntity(positionHint)) {
+			Hint hint = new Hint(positionHint,-2);
+			setEntity(hint.getStart(), hint);
+		}
+		
 	}
     
 	public void print() {

@@ -8,14 +8,13 @@ public class Hint extends BoardEntity{
 
     @Override
     public String getEncounterMessage() {
-       return "You got a hint";
+       return "You got a hint!";
         
     }
 
     @Override
-    public String getString() {
-        
-        return "H";
+    public String getString() {      
+        return "💡️";
     }
     
 }

@@ -41,6 +41,18 @@ public class Game {
 				if (boardEntity.getStart() == boardEntity.getEnd()) {
 					boardEntity.setEnd(boardEntity.getStart() + (move * 2));
 				}
+				else if (boardEntity.getEnd() == -2) {
+					Random randIndex = new Random();
+					Scanner sc=new Scanner(System.in);
+					String randomWord = WordFind.randomWordList.get(randIndex.nextInt(WordFind.randomWordList.size() - 1));
+					System.out.println("You've hit an obstacle, find a word.");
+					System.out.println("Here's a hint for you it starts with " + randomWord.charAt(0) + " and ends with " + randomWord.charAt(randomWord.length() - 1));
+					String input=sc.nextLine();
+					if (input.equals(randomWord)) {
+						boardEntity.setEnd(boardEntity.getStart() + move );
+					}
+					sc.close();
+				}
 				System.out.println(boardEntity.getEncounterMessage());
 				finalPos = boardEntity.getEnd();
 			}
