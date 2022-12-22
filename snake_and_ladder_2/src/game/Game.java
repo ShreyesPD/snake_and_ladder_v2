@@ -2,6 +2,8 @@ package game;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Random;
+import java.util.Scanner;
 
 import board.Board;
 import entities.BoardEntity;

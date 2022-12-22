@@ -1,11 +1,12 @@
 package board;
 
 import java.util.HashMap;
-import java.util.List;
+import java.util.Random;
 
-import dataLoadUtility.DataLoadUtility;
 import entities.BoardEntity;
+import entities.Hint;
 import entities.Ladder;
+import entities.Rocket;
 import entities.Snake;
 
 public class Board {
@@ -35,6 +36,12 @@ public class Board {
 		}
 		
 		Random random = new Random();
+		Integer position = random.nextInt(50);
+		if (!hasBoardEntity(position)) {
+			Rocket rocket = new Rocket(position);
+			setEntity(rocket.getStart(), rocket);
+		}
+
 		Integer positionHint = random.nextInt(99);
 		if (!hasBoardEntity(positionHint)) {
 			Hint hint = new Hint(positionHint,-2);
@@ -49,6 +56,13 @@ public class Board {
 
 	private void setEntity(int index, BoardEntity e) {
 		cells.put(index, e);
+	}
+
+	public BoardEntity getEntity(int index) {
+		if (hasBoardEntity(index)) {
+			return this.cells.get(index);
+		}
+		return null;
 	}
 
 	public boolean hasBoardEntity(int cellIndex) {
