@@ -118,9 +118,10 @@ public class Game {
 					System.out.println(board.getEntity(finalPos).getEncounterMessage());
 					break;
 				}
-
+				else {
 				System.out.println(boardEntity.getEncounterMessage());
 				finalPos = boardEntity.getEnd();
+				}
 			}
 			System.out.println("Taking you to " + finalPos);
 		} else {
