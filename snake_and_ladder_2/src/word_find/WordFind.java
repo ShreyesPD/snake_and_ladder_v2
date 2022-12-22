@@ -6,9 +6,12 @@ import java.util.Random;
 
 public class WordFind {
 	ArrayList<String> wordList;
+	public static ArrayList<String> randomWordList;
 
 	public WordFind() {
 		this.wordList = DataLoadUtility.dataload("./words");
+		randomWordList=new ArrayList<String>();
+
 	}
 
 	public int patternSearch(String key) {
@@ -37,6 +40,7 @@ public class WordFind {
 			Random randIndex = new Random();
 
 			String s = wordList.get(randIndex.nextInt(wordList.size() - 1));
+			randomWordList.add(s);
 
 			Integer srow = ((int) Math.floor(Math.random() * (max - min + 1)));
 			Integer scol = (int) Math.floor(Math.random() * (max - min + 1));
