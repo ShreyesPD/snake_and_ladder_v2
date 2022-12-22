@@ -1,7 +1,7 @@
 
 import entities.BoardEntity;
 
-public class Player 
+public class Player extends BoardEntity
 {
     Integer position;
 	String userName;
