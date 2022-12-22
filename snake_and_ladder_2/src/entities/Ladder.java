@@ -1,4 +1,4 @@
-import entities.BoardEntity;
+package entities;
 
 public class Ladder extends BoardEntity{
     public Ladder(int start, int end) {

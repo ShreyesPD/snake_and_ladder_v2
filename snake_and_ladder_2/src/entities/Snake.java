@@ -1,4 +1,4 @@
-import entities.BoardEntity;
+package entities;
 
 public class Snake extends BoardEntity{
     public Snake(int start, int end) {

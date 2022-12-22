@@ -1,5 +1,5 @@
 
-import entities.BoardEntity;
+package entities;
 
 public class Player extends BoardEntity
 {
