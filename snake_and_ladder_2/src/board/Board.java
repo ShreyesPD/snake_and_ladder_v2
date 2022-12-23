@@ -13,7 +13,7 @@ import entities.Snake;
 import entities.Trivia;
 import entities.Player;
 import entities.Reverse;
-import entities.Trivia;
+
 public class Board {
 
 	HashMap<Integer, BoardEntity> cells;
