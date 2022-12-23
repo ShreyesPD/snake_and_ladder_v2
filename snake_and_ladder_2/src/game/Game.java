@@ -112,10 +112,7 @@ public class Game {
 					sc.close();
 				}
 				else if( board.getEntity(finalPos).getEnd()==-3){
-					Scanner sc=new Scanner(System.in);
-					Random randIndex = new Random();
-					Integer i=0;
-					String[] SENTENCE; 
+					Scanner sc=new Scanner(System.in); 
 					quest=new ArrayList<String>();
 					quest=	DataLoadUtility.dataload("./Trivia");
 					System.out.println(board.getEntity(finalPos).getEncounterMessage());
