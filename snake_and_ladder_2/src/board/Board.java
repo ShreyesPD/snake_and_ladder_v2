@@ -10,9 +10,10 @@ import entities.Hint;
 import entities.Ladder;
 import entities.Rocket;
 import entities.Snake;
+import entities.Trivia;
 import entities.Player;
 import entities.Reverse;
-
+import entities.Trivia;
 public class Board {
 
 	HashMap<Integer, BoardEntity> cells;
@@ -66,6 +67,12 @@ public class Board {
 		if (!hasBoardEntity(positionHint)) {
 			Hint hint = new Hint(positionHint, -2);
 			setEntity(hint.getStart(), hint);
+		}
+
+		Integer positionTrivia = random.nextInt(69);
+		if (!hasBoardEntity(positionTrivia)) {
+			Trivia trivia = new Trivia(positionTrivia, -3);
+			setEntity(trivia.getStart(), trivia);
 		}
 
 	}

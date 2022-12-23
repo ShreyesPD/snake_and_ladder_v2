@@ -1,11 +1,13 @@
 package game;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
 import java.util.Scanner;
 
 import board.Board;
+import dataLoadUtility.DataLoadUtility;
 import entities.BoardEntity;
 import entities.Player;
 import word_find.WordFind;
@@ -16,6 +18,7 @@ public class Game {
 	Queue<Player> winners;
 	private Integer size = 100;
 	WordFind wordFinder;
+	private ArrayList<String> quest;
 
 	public Game() {
 		this.wordFinder = new WordFind();
@@ -107,6 +110,34 @@ public class Game {
 						boardEntity.setEnd(boardEntity.getStart() + move );
 					}
 					sc.close();
+				}
+				else if( board.getEntity(finalPos).getEnd()==-3){
+					Scanner sc=new Scanner(System.in);
+					Random randIndex = new Random();
+					Integer i=0;
+					String[] SENTENCE; 
+					quest=new ArrayList<String>();
+					quest=	DataLoadUtility.dataload("./Trivia");
+					System.out.println(board.getEntity(finalPos).getEncounterMessage());
+					
+					for (int r=0;r<quest.size();r++)
+					  {
+						if(!quest.get(r).equals("?")) {
+							System.out.print(quest.get(r).toString()+" ");
+							
+						}
+						else
+							break;
+						//System.out.print(quest.get(r).toString()+" ");
+						}
+					String ans=sc.nextLine();
+					if(ans.equals("dev jana")) {
+						break;
+					}
+					else {
+						finalPos=finalPos-move;
+					}
+					break;
 				}
 				else if(board.getEntity(finalPos).getEnd()==-1){
 					player.setDirection(false);
